@@ -1,19 +1,26 @@
-int led=13;
-int led2=12;
+// LED is in pin 13
+int LED_PIN = 13;
+
+// library func like main()
 void setup() {
-  // put your setup code here, to run once:
-  pinMode(led,OUTPUT);
-  pinMode(led2,OUTPUT);
+  
+  // assigning pin 13 as output pin
+  pinMode(LED_PIN, OUTPUT);
 }
 
+// library func, for looping things
 void loop() {
-  // put your main code here, to run repeatedly:
-  digitalWrite(led,HIGH);
-  delay(50);
-  digitalWrite(led,LOW);
-  delay(50);
-  digitalWrite(led2,HIGH);
-  delay(100);
-  digitalWrite(led2,LOW);
+  
+  // calling blink() func again and again
+  blink();
+}
+
+// user-defined func
+void blink(){
+
+  // sending continues HIGH signal to pin 13
+  digitalWrite(LED_PIN, HIGH);
+
+  // waiting 100 millisecs so that it looks like blinking
   delay(100);
 }
