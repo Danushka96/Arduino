@@ -1,26 +1,25 @@
-// LED is in pin 13
-int LED_PIN = 13;
+// LED is in GPIO - 16
+int LED_PIN = 16;
 
 // library func like main()
-void setup() {
-  
-  // assigning pin 13 as output pin
-  pinMode(LED_PIN, OUTPUT);
+void setup()
+{
+    // assigning pin 16 as output pin
+    pinMode(LED_PIN, OUTPUT);
 }
 
 // library func, for looping things
-void loop() {
-  
-  // calling blink() func again and again
-  blink();
-}
+void loop()
+{
+    // sending continues HIGH signal to set LED
+    digitalWrite(LED_PIN, HIGH);
 
-// user-defined func
-void blink(){
+    // waiting 100 millisecs so that it looks like blinking
+    delay(100);
 
-  // sending continues HIGH signal to pin 13
-  digitalWrite(LED_PIN, HIGH);
+    // sending continues HIGH signal to set LED
+    digitalWrite(LED_PIN, LOW);
 
-  // waiting 100 millisecs so that it looks like blinking
-  delay(100);
+    // waiting 100 millisecs so that it looks like blinking
+    delay(100);
 }
